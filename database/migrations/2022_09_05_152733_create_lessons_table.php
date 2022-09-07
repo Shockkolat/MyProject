@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lesson', function (Blueprint $table) {
-            $table->id('lesson_id');
+        Schema::create('lessons', function (Blueprint $table) {
+            $table->id();
             $table->string('lesson_name');
             $table->string('file');
             $table->timestamps();

@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ExamCRUDController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\HomeController;
 use App\Models\Exam;
 
 Route::resource('exams', ExamCRUDController::class);
+Route::resource('lessons', LessonController::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +35,5 @@ Route::get('/aboutus', function (){
 
 
 Route::get('admin/exams/index', [ExamCRUDController::class, 'index'])->name('admin.exams.index')->middleware('is_admin');
-Route::get('admin/lesson/editlesson', [HomeController::class, 'editlesson'])->name('admin.lesson.editlesson')->middleware('is_admin');
+Route::get('admin/lessons/editlesson', [LessonController::class, 'editlesson'])->name('admin.lessons.editlesson')->middleware('is_admin');
+Route::get('admin/lessons/viewlesson', [LessonController::class, 'show'])->name('admin.lessons.viewlesson')->middleware('is_admin');

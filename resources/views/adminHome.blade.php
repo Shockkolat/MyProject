@@ -21,7 +21,7 @@
 
                     <div class="col-md-12 text-center mt-2">
 
-                        <a class="btn btn-success" href="lesson/editlesson" role="button">Edit Lesson</a>
+                        <a class="btn btn-success" href="lessons/editlesson" role="button">Edit Lesson</a>
                         <a class="btn btn-warning" href="#" role="button">Student List</a>
                         <a class="btn btn-primary" href="#" role="button">Talk with Student</a>
                         <a class="btn btn-danger" href="#" role="button">Edit Document</a>

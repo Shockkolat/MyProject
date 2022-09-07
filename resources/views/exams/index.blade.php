@@ -18,13 +18,13 @@
             <a class="navbar-brand"><span>Stat</span>Learning</a>
         </div>
     </nav>
-    <div class="container mt-4">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-12 text-center mt-5">
-                <h2>Edit Examination</h2>
+                <h2 class="mt-3">Edit Examination</h2>
             </div>
-            <div>
-                <a href="{{ route('exams.create') }}" class="btn btn-success">Create Question</a>
+            <div class="text-end">
+                <a href="{{ route('exams.create') }}" class="btn btn-success ">Create Question</a>
             </div>
             @if ($message = Session::get('success'))
             <div class="alert alert-success">
@@ -67,7 +67,7 @@
             </table>
             {!! $exams->links('pagination::bootstrap-5') !!}
         </div>
-        <div>
+        <div class="text-end">
             <a href="{{ route('admin.home') }}" class="btn btn-primary mb-5">Back</a>
         </div>
     </div>
