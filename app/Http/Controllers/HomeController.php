@@ -51,9 +51,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function editlesson()
-    // {
-    //     return view('lesson.editlesson');
-    // }
+    public function studentlist()
+    {
+        return view('studentList');
+    }
 
 }

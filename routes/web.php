@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ExamCRUDController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Models\Exam;
 
 Route::resource('exams', ExamCRUDController::class);
@@ -37,3 +38,4 @@ Route::get('/aboutus', function (){
 Route::get('admin/exams/index', [ExamCRUDController::class, 'index'])->name('admin.exams.index')->middleware('is_admin');
 Route::get('admin/lessons/editlesson', [LessonController::class, 'editlesson'])->name('admin.lessons.editlesson')->middleware('is_admin');
 Route::get('admin/lessons/viewlesson', [LessonController::class, 'show'])->name('admin.lessons.viewlesson')->middleware('is_admin');
+Route::get('admin/studentlist', [UserController::class, 'list'])->name('admin.studentList')->middleware('is_admin');
