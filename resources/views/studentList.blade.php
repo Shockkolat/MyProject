@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Student List</title>
+    <title>Stat Learning User List</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -52,7 +52,7 @@
         </table>
         {!! $users->links('pagination::bootstrap-5') !!}
 
-        <div class="col-md-12 text-center mt-3">
+        <div class="col-md-12 text-end mt-3">
           <a href="{{ route('admin.home') }}" class="btn btn-primary">Back</a>
         </div>
       </div>

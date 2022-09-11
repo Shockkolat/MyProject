@@ -11,7 +11,7 @@
     
     <div class="container mt-2">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="card-header col-lg-12">
                 <h2>Add Question</h2>
             </div>
             <div>

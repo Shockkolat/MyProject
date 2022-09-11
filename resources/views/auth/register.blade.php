@@ -131,11 +131,14 @@
             </div>
 
             <div class="row mb-3">
-                <div class="col-md-13">
+                <div class="col-md-13 text-center">
                     <button type="submit" class="btn btn-primary w-100">
                         {{ __('Register') }}
                     </button>
+
+                    <a href="{{ route('admin.home') }}" class="btn btn-primary  mt-3">Back</a>
                 </div>
+                    
             </div>
         </form>
     </div>

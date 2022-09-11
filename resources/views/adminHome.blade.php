@@ -24,7 +24,7 @@
                         <a class="btn btn-success" href="lessons/editlesson" role="button">Edit Lesson</a>
                         <a class="btn btn-warning" href="studentlist" role="button">Student List</a>
                         <a class="btn btn-primary" href="#" role="button">Talk with Student</a>
-                        <a class="btn btn-danger" href="#" role="button">Edit Document</a>
+                        <a class="btn btn-danger" href="documents/editdocument" role="button">Edit Document</a>
                         <a class="btn btn-dark" href="exams/index" role="button">Edit Exam</a>
 
                     </div>

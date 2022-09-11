@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stat Learning Edit Lesson</title>
+    <title>Stat Learning Edit Document</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,24 +25,24 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-lg-12 text-center mt-5">
-          <h2>Edit Lesson</h2>
+          <h2>Edit Document</h2>
         </div>
         
             <table class="table table-bordered mt-3">
               <tr>
-                  <th>Lesson id</th>
-                  <th>Lesson Name</th>
+                  <th>Document id</th>
+                  <th>Document Name</th>
                   <th>File</th>
                   <th width="280px">Action</th>
               </tr>
-              @foreach($lessons as $lesson)
+              @foreach($documents as $document)
               <tr>
-                  <td>{{ $lesson->id }}</td>
-                  <td>{{ $lesson->lesson_name }}</td>
-                  <td>{{ $lesson->file }}</td>
+                  <td>{{ $document->id }}</td>
+                  <td>{{ $document->document_name }}</td>
+                  <td>{{ $document->file }}</td>
                   <td>
-                      <form action="{{ route('lessons.destroy', $lesson->id) }}" method="POST">
-                          <a href="{{ route('lessons.show', $lesson->id) }}" class="btn btn-primary">View</a>
+                      <form action="{{ route('documents.destroy', $document->id) }}" method="POST">
+                          <a href="{{ route('documents.show', $document->id) }}" class="btn btn-primary">View</a>
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger">Delete</button>
@@ -52,7 +52,7 @@
               @endforeach
           </table>
 
-          {!! $lessons->links('pagination::bootstrap-5') !!}
+          {!! $documents->links('pagination::bootstrap-5') !!}
 
             @if ($message = Session::get('success'))
             <div class="alert alert-success text-center h-50">
@@ -64,12 +64,12 @@
             <a href="{{ route('admin.home') }}" class="btn btn-primary">Back</a>
           </div>
         
-          <form action="{{ route('lessons.store') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('documents.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="container mt-4 d-block justify-content-between col-md-4 ">
               
-                <input class="form-control " type="text" name="lesson_name" placeholder="ชื่อบทเรียน">
-                {{-- <label for="file" class="form-label">เลือกไฟล์วิดีโอที่จะอัพโหลด</label> --}}
+                <input class="form-control " type="text" name="document_name" placeholder="ชื่อเอกสาร">
+                
                 <input class="form-control mt-3" type="file" name="file" >
 
                 <div class="col-md-12 text-center mt-3">
