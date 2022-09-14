@@ -56,5 +56,15 @@ class HomeController extends Controller
         return view('studentList');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function result()
+    {
+        return view('result');
+    }
+
 
 }
