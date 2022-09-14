@@ -10,87 +10,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap" rel="stylesheet" />
 
+    <link href="{{ asset('/css/welcome.css') }}" rel="stylesheet">
 
-    <style>
-        * {
-            font-family: 'Kanit', sans-serif;
-            ;
-        }
-
-        .navbar-nav a {
-            font-size: 15px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: white;
-
-        }
-
-        .navbar-dark .navbar-brand {
-            color: white;
-            font-size: 25px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 2px;
-
-        }
-
-        .navbar-dark .navbar-brand span {
-            color: #1977cc;
-        }
-
-        .w-100 {
-            height: 100vh;
-        }
-
-        .navbar-toggler {
-            padding: 1px 5px;
-            font-size: 18px;
-            line-height: .3;
-
-        }
-
-        .content {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .content h2 {
-            text-transform: uppercase;
-            font-weight: 900;
-            font-size: 60px;
-        }
-
-        .content p {
-            width: 60%;
-            margin: auto;
-            font-size: 20px;
-        }
-
-        @media only screen and (max-width: 767px) {
-            .navbar-nav {
-                text-align: center
-            }
-
-            .carousel-caption {
-                bottom: 165px
-            }
-
-            .carousel-caption h5 {
-                font-size: 16px
-            }
-
-            .carousel-caption a {
-                padding: 10px 15px;
-                font-size: 14px
-            }
-
-            .navbar .appbtn {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -100,42 +21,80 @@
             <button class="navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             @if (Route::has('login'))
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb- mb-lg-0">
-                        
-                        @auth
-                        
-                        @else
-                        <li class="nav-item">
-                            <a href="{{ route('login') }}" class="nav-link">Login</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link">Signup</a>
-                        </li>
-                        @endif
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ ('/aboutus') }}">About us</a>
-                        </li>
-                        @endauth
-                    </ul>
-                
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb- mb-lg-0">
+
+                    @auth
+
+                    @else
+                    <li class="nav-item">
+                        <a href="{{ route('login') }}" class="nav-link">Login</a>
+                    </li>
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a href="{{ route('register') }}" class="nav-link">Signup</a>
+                    </li>
+                    @endif
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ ('/aboutus') }}">About us</a>
+                    </li>
+                    @endauth
+                </ul>
+
             </div>
             @endif
         </div>
     </nav>
-    <div class="content">
-        <div class="thing">
-            <h2>StatLearning</h2>
-            <p>
-                เป็นคนไม่ค่อยฝัน เพราะว่าฉันไม่ค่อยนอน จะไม่มีคำว่าสาย ถ้าเราตื่นบ่าย
+    <section class="home" id="home">
+
+        <div class="deco-shape shape-1">
+            <img src="./images/shape-1.png" alt="art shape" width="70">
+        </div>
+        <div class="deco-shape shape-2">
+            <img src="./images/shape-2.png" alt="art shape" width="55">
+        </div>
+        <div class="deco-shape shape-3">
+            <img src="./images/shape-3.png" alt="art shape" width="120">
+        </div>
+        <div class="deco-shape shape-4">
+            <img src="./images/shape-4.png" alt="art shape" width="30">
+        </div>
+
+        <div class="home-left">
+
+            <p class="section-subtitle ms-5">ยินดีต้อนรับสู่คลาสเรียนสถิติของเรา</p>
+
+            <h1 class="main-heading ms-5">
+                คลาสเรียนจาก
+                <span class="underline-img">ผู้สอนชั้นนำ <img src="./images/banner-line.png" alt="line"></span>
+            </h1>
+
+            <p class="section-text ms-5">
+
+                สถิติ หมายถึง ศาสตร์หรือวิชาที่ว่าด้วยหลักการและระเบียบวิธีทางสถิติ สถิติใน ความหมาย นี้มักเรียกว่า สถิติศาสตร์ (Statistics)
+
             </p>
         </div>
-    </div>
+        <div class="home-right">
+
+            <div class="img-box">
+
+                <img src="./images/banner-img-bg.png" alt="colorful background shape" class="background-shape">
+
+                <img src="./images/banner-img.png" alt="banner image" class="banner-img">
+
+                <img src="./images/banner-aliment-icon-4.png" alt="" class="icon-4  drop-anim ">
+
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- -->
-    <footer class="bg-dark text-center text-lg-start">
+    <footer class="bg-dark text-center text-lg-start fixed-bottom">
         <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
             @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
         </div>

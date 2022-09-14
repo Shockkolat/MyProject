@@ -13,11 +13,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
+    <link href="{{ asset('/css/welcome.css') }}" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <style>
+    {{-- <style>
         * {
             font-family: 'Nunito', sans-serif;
         }
@@ -67,7 +68,7 @@
 
 
         }
-    </style>
+    </style> --}}
 </head>
 
 <body>
@@ -104,7 +105,7 @@
                         
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('HOME') }}</a>
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{ __('COURSE') }}</a>

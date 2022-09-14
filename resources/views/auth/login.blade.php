@@ -161,15 +161,19 @@
             </div>
 
 
-            <div class=" ">
+            <div class="row mb-3">
                 <button type="submit" class="btn btn-primary w-100">
                     {{ __('Login') }}
                 </button>
+
+                <a href="/" class="btn btn-primary  mt-3">Back</a>
 
                 @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
+
+                
                 @endif
             </div>
 
