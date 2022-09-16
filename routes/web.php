@@ -32,6 +32,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/result', [App\Http\Controllers\HomeController::class, 'result'])->name('result');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
 Route::get('/aboutus', function (){
     return view('aboutus');

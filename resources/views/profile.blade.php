@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<html lang="en">
+  <!--divinectorweb.com-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>StatLearning 📚</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap" rel="stylesheet" />
-    <link href="{{ asset('/css/welcome.css') }}" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
+
 
 </head>
-
 <body>
+  
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand">
@@ -86,64 +96,31 @@
             </div>
         </div>
     </nav>
-    
-    <section class="home" id="home">
 
-        <div class="deco-shape shape-1">
-            <img src="./images/shape-1.png" alt="art shape" width="70">
-        </div>
-        <div class="deco-shape shape-2">
-            <img src="./images/shape-2.png" alt="art shape" width="55">
-        </div>
-        <div class="deco-shape shape-3">
-            <img src="./images/shape-3.png" alt="art shape" width="120">
-        </div>
-        <div class="deco-shape shape-4">
-            <img src="./images/shape-4.png" alt="art shape" width="30">
-        </div>
-
-        <div class="home-left">
-
-            <p class="section-subtitle ms-5">ยินดีต้อนรับสู่คลาสเรียนสถิติของเรา</p>
-
-            <h1 class="main-heading ms-5">
-                คลาสเรียนจาก
-                <span class="underline-img">ผู้สอนชั้นนำ <img src="./images/banner-line.png" alt="line"></span>
-            </h1>
-
-            <p class="section-text ms-5">
-
-                สถิติ หมายถึง ศาสตร์หรือวิชาที่ว่าด้วยหลักการและระเบียบวิธีทางสถิติ สถิติใน ความหมาย นี้มักเรียกว่า สถิติศาสตร์ (Statistics)
-
-            </p>
-        </div>
-        <div class="home-right">
-
-            <div class="img-box">
-
-                <img src="./images/banner-img-bg.png" alt="colorful background shape" class="background-shape">
-
-                <img src="./images/banner-img.png" alt="banner image" class="banner-img">
-
-                <img src="./images/banner-aliment-icon-4.png" alt="" class="icon-4  drop-anim ">
-
-            </div>
-
-        </div>
-
-    </section>
-
-</body>
-
-<!-- -->
-<footer class="bg-dark text-center text-lg-start fixed-bottom">
-    <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
+  <div class="content mt-5">
+    <div class="thing mt-5 mb-3">
+      <h2>Profile</h2>
+      <p class="fs-3">
+        บัญชีผู้ใช้
+      </p>
     </div>
-</footer>
+  </div>
+  <div>
+      <div>
+          <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png?w=360" class="rounded mx-auto d-block mt-5 mb-5" style="width: 250px">
+      </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+      <div class="text-center"> 
+          <p class="fw-bolder fs-4 mb-3">ชื่อ-นามสกุล : <span class="fw-normal fs-4">ประหยัด     จันทร์อังคารพุทธ</span></p>
+
+          <p class="fw-bolder fs-4 mb-3">Email : <span class="fw-normal fs-4">awasd@hotmail.com</span></p>
+          
+      </div>
+  </div>
+  <!-- -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
 </body>
-
+</html>

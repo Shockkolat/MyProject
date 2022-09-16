@@ -66,5 +66,23 @@ class HomeController extends Controller
         return view('result');
     }
 
-
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contact()
+    {
+        return view('contact');
+    }
+    
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function profile()
+    {
+        return view('profile');
+    }
 }
