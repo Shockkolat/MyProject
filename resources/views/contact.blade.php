@@ -146,7 +146,7 @@
               <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
             </div>
             <div class="d-grid gap-2 col-6 mx-auto mt-3">
-              <button class="btn btn-success" type="button">
+              <button class="btn btn-success mb-2" type="button">
                 Send
               </button>
             </div>
@@ -155,8 +155,14 @@
       </div>
               
   </div>
-  <!-- -->
-
+  
+  <!-- 
+    <footer class="bg-dark text-center text-lg-start fixed-bottom">
+        <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
+        </div>
+    </footer>
+    -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>

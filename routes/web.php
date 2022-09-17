@@ -34,6 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/result', [App\Http\Controllers\HomeController::class, 'result'])->name('result');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+Route::get('/videoplayer', [App\Http\Controllers\HomeController::class, 'videoplayer'])->name('videoplayer');
 
 Route::get('/aboutus', function (){
     return view('aboutus');

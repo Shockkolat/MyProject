@@ -9,84 +9,84 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap" rel="stylesheet" />
 
-    
+    <link href="{{ asset('/css/result.css') }}" rel="stylesheet">
 
 </head>
 
-<link href="{{ asset('/css/result.css') }}" rel="stylesheet">
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand">
-            <span>Stat</span>Learning
-        </a>
-        <button class="navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand">
+                <span>Stat</span>Learning
+            </a>
+            <button class="navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav me-auto">
 
-            </ul>
+                </ul>
 
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto mb- mb-lg-0">
-                <!-- Authentication Links -->
-                @guest
-                @if (Route::has('login'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @endif
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto mb- mb-lg-0">
+                    <!-- Authentication Links -->
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @endif
 
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
-                
-                @else
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('result')}}">{{ __('COURSE') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('BLOG') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('contact')}}">{{ __('CONTACT US') }}</a>
-                </li>
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
+                    
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('result')}}">{{ __('COURSE') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{ __('BLOG') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('contact')}}">{{ __('CONTACT US') }}</a>
+                    </li>
 
-                <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
 
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-dark" href="{{route('profile')}}">
-                            {{ __('Profile') }}
-                        </a>
-                        
-                        <a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-dark" href="{{route('profile')}}">
+                                {{ __('Profile') }}
+                            </a>
+                            
+                            <a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
 
-                        
-                    </div>
-                </li>
-                @endguest
-            </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
+                            
+                        </div>
+                    </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     
         <section class="features d-flex justify-content-evenly">
           <div class="features-left mt-4">
@@ -110,9 +110,9 @@
               </li>
 
               <div class="d-grid gap-2 col-4 mx-auto">
-                <button class="btn btn-warning" type="button">
+                <a class="btn btn-warning" type="button" href="{{ route('videoplayer') }}">
                   เริ่มเรียน
-                </button>
+                </a>
               </div>
             </ul>
           </div>
@@ -189,11 +189,11 @@
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
         ></script>
  
-        <footer class="bg-dark text-center text-lg-start fixed-bottom">
+        {{-- <footer class="bg-dark text-center text-lg-start fixed-bottom">
             <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
                 @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
             </div>
-        </footer>
+        </footer> --}}
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

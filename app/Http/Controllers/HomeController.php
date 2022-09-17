@@ -85,4 +85,14 @@ class HomeController extends Controller
     {
         return view('profile');
     }
+
+        /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function videoplayer()
+    {
+        return view('videoplayer');
+    }
 }
