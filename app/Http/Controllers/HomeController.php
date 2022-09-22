@@ -95,4 +95,5 @@ class HomeController extends Controller
     {
         return view('videoplayer');
     }
+
 }
