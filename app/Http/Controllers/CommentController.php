@@ -11,7 +11,7 @@ class CommentController extends Controller
 {   
     public function index() {
         $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(5);
-        return view('commentmanage', $data);
+        return view('comment', $data);
     }
 
 
@@ -19,8 +19,9 @@ class CommentController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['comment' => 'requied|max:1000']);
+        $this->validate($request, ['comment' => 'required|max:1000']);
         $comment = new Comment();
+        $comment->name = Auth::user()->name ;
         $comment->user_id = Auth::id();
         $comment->comment = $request->comment;
         $comment->save();
@@ -30,6 +31,11 @@ class CommentController extends Controller
         return redirect()->route('comment')->with('success', 'Comment has been created successfully.');
 
 
+    }
+
+    public function show(Comment $comment){
+        $data = Comment::all();
+        return view('comment', compact('comment'));
     }
 
     public function destroy(Comment $comment){

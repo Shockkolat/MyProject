@@ -38,6 +38,7 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 Route::get('/videoplayer', [App\Http\Controllers\HomeController::class, 'videoplayer'])->name('videoplayer');
 Route::get('/comment', [App\Http\Controllers\CommentController::class, 'index'])->name('comment');
+Route::post('/commentstore', [App\Http\Controllers\CommentController::class, 'store'])->name('comment.store');
 
 Route::get('/aboutus', function (){
     return view('aboutus');

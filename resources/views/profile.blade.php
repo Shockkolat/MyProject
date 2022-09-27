@@ -62,7 +62,7 @@
                         <a class="nav-link" href="{{route('result')}}">{{ __('COURSE') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ __('BLOG') }}</a>
+                        <a class="nav-link" href="{{route('comment')}}">{{ __('COMMENT') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('contact')}}">{{ __('CONTACT US') }}</a>
