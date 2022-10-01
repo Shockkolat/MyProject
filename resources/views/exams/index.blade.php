@@ -72,8 +72,9 @@
         </div>
     </div>
 
+
 </body>
-<footer class=" bg-dark text-center text-lg-start position-absolute-buttom">
+<footer class=" bg-dark text-center text-lg-start fixed-bottom">
     <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
     </div>

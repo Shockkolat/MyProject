@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\CommentReply;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -14,13 +15,22 @@ class CommentController extends Controller
         return view('comment', $data);
     }
 
+    public function manage() {
+        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(5);
+        return view('commentmanage', $data);
+    }
 
-
+    public function adminindex() {
+        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(5);
+        return view('adminComment', $data);
+    }
+    
 
     public function store(Request $request)
     {
         $this->validate($request, ['comment' => 'required|max:1000']);
         $comment = new Comment();
+        // $comment->id = $comment;
         $comment->name = Auth::user()->name ;
         $comment->user_id = Auth::id();
         $comment->comment = $request->comment;
@@ -29,6 +39,23 @@ class CommentController extends Controller
 
         //Success message
         return redirect()->route('comment')->with('success', 'Comment has been created successfully.');
+
+
+    }
+
+    public function adminstore(Request $request)
+    {
+        $this->validate($request, ['comment' => 'required|max:1000']);
+        $comment = new Comment();
+        // $comment->id = $comment;
+        $comment->name = Auth::user()->name ;
+        $comment->user_id = Auth::id();
+        $comment->comment = $request->comment;
+        $comment->save();
+
+
+        //Success message
+        return redirect()->route('admin.comment')->with('success', 'Comment has been created successfully.');
 
 
     }

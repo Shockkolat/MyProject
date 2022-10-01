@@ -15,76 +15,9 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand">
-                <span>Stat</span>Learning
-            </a>
-            <button class="navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto mb- mb-lg-0">
-                    <!-- Authentication Links -->
-                    @guest
-                    @if (Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                    @endif
-                    
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('result')}}">{{ __('COURSE') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('comment')}}">{{ __('COMMENT') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact')}}">{{ __('CONTACT US') }}</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark" href="{{route('profile')}}">
-                                {{ __('Profile') }}
-                            </a>
-                            
-                            <a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-
-                            
-                        </div>
-                    </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
+      <div class="container">
+          <a class="navbar-brand"><span>Stat</span>Learning</a>
+      </div>
     </nav>
 
     <div class="content mt-5">
@@ -183,12 +116,12 @@
       <!-- End comment-sec Area -->
 
       <!-- Start commentform Area -->
-      <section class="commentform-area pb-120 pt-30 mb-50">
+      <section class="commentform-area pb-120 pt-80 mb-100">
         <div class="container">
           <h5 class="text-uppercase mb-2">Leave a Comment</h5>
           <div class="row flex-row d-flex">
             <div class="col-lg-12">
-                <form action="{{route('comment.store')}}" method="POST">
+                <form action="{{route('admin.comment.store')}}" method="POST">
                     @csrf
               <textarea
                 class="form-control mb-2 mt-2"
@@ -201,7 +134,11 @@
               <button class="btn btn-primary mt-2 mb-5" type="submit" href="#">
                 comment
               </button>
+              
             </form>
+            <div class="text-end">
+              <a href="{{ route('admin.home') }}" class="btn btn-primary mb-5 ">Back</a>
+              </div>
             </div>
           </div>
         </div>
@@ -236,9 +173,4 @@
 
     </script>
   </body>
-{{-- <footer class=" bg-dark text-center text-lg-start fixed-bottom">
-    <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
-    </div>
-</footer> --}}
 </html>

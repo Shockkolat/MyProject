@@ -23,12 +23,14 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-12 text-center mt-5">
-                <h2 class="mt-3">Comment manage</h2>
+                <h2 class="mt-3">Comment & Reply management</h2>
             </div>
+            {{-- Comment Zone --}}
                 <table class="table table-bordered mt-3">
                     <tr>
                         <th>No.</th>
                         <th>user_id</th>
+                        <th>Name</th>
                         <th>comment</th>
 
                         <th width="280px">Action</th>
@@ -37,6 +39,7 @@
                     <tr>
                         <td>{{ $comment->id }}</td>
                         <td>{{ $comment->user_id }}</td>
+                        <td>{{ $comment->name }}</td>
                         <td>{{ $comment->comment }}</td>
                         <td>
                             <form action="{{ route('comments.destroy', $comment->id) }}" method="POST">
@@ -49,9 +52,18 @@
                     @endforeach
                 </table>
                 {!! $comments->links('pagination::bootstrap-5') !!}
+
                 <div class="text-end">
+                    <a href="{{ route('admin.replymanage') }}" class="btn btn-warning mb-5 ml-1">Reply manage</a>
                     <a href="{{ route('admin.home') }}" class="btn btn-primary mb-5">Back</a>
                 </div>
         </div>
     </div>
-    </main>
+</body>
+<footer class=" bg-dark text-center text-lg-start fixed-bottom">
+    <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
+    </div>
+</footer>
+
+</main>

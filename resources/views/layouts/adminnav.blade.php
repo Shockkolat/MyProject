@@ -14,11 +14,11 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
-    <link href="{{ asset('/css/welcome.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/result.css') }}" rel="stylesheet">
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/comment.css') }}" rel="stylesheet">
+    <!-- Scripts 
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    -->
     {{-- <style>
         * {
             font-family: 'Nunito', sans-serif;
@@ -106,16 +106,7 @@
                         
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('result')}}">{{ __('COURSE') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('comment')}}">{{ __('COMMENT') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('contact')}}">{{ __('CONTACT US') }}</a>
+                            <a class="nav-link" href="{{ route('admin.home') }}">{{ __('HOME') }}</a>
                         </li>
     
                         <li class="nav-item dropdown">
