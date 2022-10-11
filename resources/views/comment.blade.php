@@ -221,18 +221,18 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
-    function showReplyForm(commentId,user) {
-      var x = document.getElementById(`reply-form-${commentId}`);
-      var input = document.getElementById(`reply-form-${commentId}-text`);
+      function showReplyForm(commentId,user) {
+        var x = document.getElementById(`reply-form-${commentId}`);
+        var input = document.getElementById(`reply-form-${commentId}-text`);
 
-      if (x.style.display === "none") {
-        x.style.display = "block";
-        input.innerText=`@${user} `;
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          input.innerText=`@${user} `;
 
-      } else {
-        x.style.display = "none";
+        } else {
+          x.style.display = "none";
+        }
       }
-    }
 
     </script>
   </body>

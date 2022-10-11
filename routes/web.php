@@ -39,10 +39,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/result', [App\Http\Controllers\HomeController::class, 'result'])->name('result');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
-Route::get('/videoplayer', [App\Http\Controllers\HomeController::class, 'videoplayer'])->name('videoplayer');
+Route::get('/videoplayer', [App\Http\Controllers\LessonController::class, 'fetch'])->name('videoplayer');
 Route::get('/comment', [App\Http\Controllers\CommentController::class, 'index'])->name('comment');
 Route::post('/commentstore', [App\Http\Controllers\CommentController::class, 'store'])->name('comment.store');
 Route::post('/commentreply/{comment}', [App\Http\Controllers\CommentReplyController::class, 'store'])->name('reply.store');
+
+// Route::get('/fetch_video', [App\Http\Controllers\LessonController::class, 'fetch'])->name('videoplayer');
 
 Route::get('/aboutus', function (){
     return view('aboutus');
@@ -60,3 +62,6 @@ Route::get('admin/commentmanage', [CommentController::class, 'manage'])->name('a
 Route::get('admin/replymanage', [CommentReplyController::class, 'manage'])->name('admin.replymanage')->middleware('is_admin');
 Route::get('admin/comment', [App\Http\Controllers\CommentController::class, 'adminindex'])->name('admin.comment')->middleware('is_admin');
 Route::post('admin/commentstore', [App\Http\Controllers\CommentController::class, 'adminstore'])->name('admin.comment.store')->middleware('is_admin');
+
+// Route::get('file-upload', [LessonController::class, 'index'])->name('files.index')->middleware('is_admin');
+// Route::post('file-upload/upload-large-files', [LessonController::class, 'uploadLargeFiles'])->name('files.upload.large')->middleware('is_admin');

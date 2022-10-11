@@ -98,14 +98,17 @@
 
   <div class="container d-flex justify-content-between">
       <div class="video">
-          <iframe width="860" 
+        @foreach ($lessons as $lesson)
+            
+          <video width="860" 
           height="480" 
-          src="https://www.youtube.com/embed/4ZEffYE3VkQ" 
+          {{-- src="/video/{{ $lesson->file }}"  --}}
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
-          </iframe>
+          </video>
+          @endforeach
       </div>
     </main>
 

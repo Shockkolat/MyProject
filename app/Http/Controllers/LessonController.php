@@ -7,6 +7,9 @@ use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File; 
 use PhpParser\Node\Expr\FuncCall;
+use Illuminate\Support\Facades\Storage;
+use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
+use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 
 
 class LessonController extends Controller
@@ -42,6 +45,15 @@ class LessonController extends Controller
         return redirect()->route('admin.lessons.editlesson')->with('success', 'Lesson has been added !');
 
     }
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//     public function fetch(Lesson $lesson){
+//         $data = Lesson::find($lesson);
+//        return view('videoplayer', compact('lesson'));
+//    }
 
     public function show(Lesson $lesson){
          $data = Lesson::find($lesson);
