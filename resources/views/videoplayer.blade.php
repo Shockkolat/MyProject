@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap"
       rel="stylesheet"
     />
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 
     <link href="{{ asset('/css/video.css') }}" rel="stylesheet">
 
@@ -98,46 +99,42 @@
 
   <div class="container d-flex justify-content-between">
       <div class="video">
-        @foreach ($lessons as $lesson)
-            
-          <video width="860" 
+        @foreach($lessons as $lesson)
+          <video 
+          width="720" 
           height="480" 
-          {{-- src="/video/{{ $lesson->file }}"  --}}
-          title="YouTube video player" 
+          {{-- src ="/video/{{ $lesson->file }}"  --}}
+          title="video player" 
           frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;currentTime" 
+          allowfullscreen
+          id="video"
+          controls
+          >
+          <source src ="/video/{{ $lesson->file }}" type="video/mp4">
           </video>
-          @endforeach
+        @endforeach
       </div>
-    </main>
+      
 
     <div class="lesson_selector">
       <h2 class="mt-5 mb-3 fw-bolder  text-center">หลักสถิติ 1</h2>
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action"
-          >บทที่ 1 การวิเคราะห์ข้อมูลเบื่องต้น</a
-        >
-        <a href="#" class="list-group-item list-group-item-action"
-          >บทที่ 2 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</a
-        >
-        <a href="#" class="list-group-item list-group-item-action"
-          >บทที่ 3 การแจกแจงค่าของสถิติ</a
-        >
-        <a
-          href="#"
-          class="list-group-item list-group-item-action disabled"
-          tabindex="-1"
-          aria-disabled="true"
-          >post test</a
-        >
+        @foreach($selects as $select)
+        <a href="{{ route('videoselect',$select) }}" class="list-group-item list-group-item-action">
+          {{ $select->lesson_name}}
+        </a>
+        @endforeach
+        {{-- <a href="#" class="list-group-item list-group-item-action">
+          บทที่ 2 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          บทที่ 3 การแจกแจงค่าของสถิติ
+        </a> --}}
+        <a href="#"class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
+          post test
+        </a>
       </div>
-
-      <div class="d-grid gap-2 col-6 mx-auto mt-3">
-          <button class="btn btn-primary" type="button">
-            ทดสอบ
-          </button>
-        </div>
 
       <div class="d-grid gap-2 col-6 mx-auto mt-2">
           <button class="btn btn-warning" type="button">
@@ -151,4 +148,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+  <script type="text/javascript">
+    var video = document.getElementById('video').src;
+    
+    var is_ended = 0;
+
+    video.onended = function() {
+      is_ended = 1;
+    };
+  </script>
+
 </body>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Validator;
+use App\Models\Result;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File; 
@@ -10,6 +11,7 @@ use PhpParser\Node\Expr\FuncCall;
 use Illuminate\Support\Facades\Storage;
 use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
+use Illuminate\Support\Facades\DB;
 
 
 class LessonController extends Controller
@@ -45,15 +47,39 @@ class LessonController extends Controller
         return redirect()->route('admin.lessons.editlesson')->with('success', 'Lesson has been added !');
 
     }
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//     public function fetch(Lesson $lesson){
-//         $data = Lesson::find($lesson);
-//        return view('videoplayer', compact('lesson'));
-//    }
+    public function fetch(){
+        
+        $lesson = 1;
+        
+        $select = Lesson::all();
+        
+        $data = DB::table('lessons')->where('id','=',$lesson)->get();
+   
+        return view('videoplayer', ['lessons'=>$data,'selects'=>$select]);
+        // $data ['lessons'] = Lesson::orderBy('id', 'asc')->paginate(3);
+        // return view('videoplayer', $data);
+        
+        //  $data = Lesson::find($lesson);
+        //  return view('videoplayer', compact('lesson'));
+   }
+    public function select( $lesson){
+            
+        $request = $lesson;
+        
+        $select = Lesson::all();
+        
+        $data = DB::table('lessons')->where('id','=',$request)->get();
+   
+        return view('videoplayer', ['lessons'=>$data,'selects'=>$select]);
+        // $data ['lessons'] = Lesson::orderBy('id', 'asc')->paginate(3);
+        // return view('videoplayer', $data);
+        
+        //  $data = Lesson::find($lesson);
+        //  return view('videoplayer', compact('lesson'));
+    }
+   
 
     public function show(Lesson $lesson){
          $data = Lesson::find($lesson);
@@ -72,6 +98,12 @@ class LessonController extends Controller
         $lesson->delete();
         return redirect()->route('admin.lessons.editlesson')->with('success', 'Lesson has been deleted !');
     }
+
+    public function status(Result $result)
+{
+    $result ['results'] = Result::all();
+    return view('videoplayer', $result);
+}
 
 
 }

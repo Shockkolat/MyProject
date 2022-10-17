@@ -110,7 +110,7 @@
               </li>
 
               <div class="d-grid gap-2 col-4 mx-auto">
-                <a class="btn btn-warning" type="button" href="{{ route('videoplayer') }}">
+                <a class="btn btn-warning" type="button" href="{{ route('videoplayer',1) }}">
                   เริ่มเรียน
                 </a>
               </div>

@@ -10,6 +10,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CommentReplyController;
 use App\Models\Exam;
+use App\Models\Lesson;
 
 Route::resource('exams', ExamCRUDController::class);
 Route::resource('lessons', LessonController::class);
@@ -34,16 +35,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/result', [App\Http\Controllers\HomeController::class, 'result'])->name('result');
-Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
-Route::get('/videoplayer', [App\Http\Controllers\LessonController::class, 'fetch'])->name('videoplayer');
-Route::get('/comment', [App\Http\Controllers\CommentController::class, 'index'])->name('comment');
-Route::post('/commentstore', [App\Http\Controllers\CommentController::class, 'store'])->name('comment.store');
-Route::post('/commentreply/{comment}', [App\Http\Controllers\CommentReplyController::class, 'store'])->name('reply.store');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/result', [HomeController::class, 'result'])->name('result');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/videoplayer', [LessonController::class, 'fetch'])->name('videoplayer');
+Route::get('/videoplayer/{lesson}', [LessonController::class, 'fetch'])->name('videoplayer');
+Route::get('/videoplayer/{lesson}', [LessonController::class, 'select'])->name('videoselect');
 
+Route::get('/comment', [CommentController::class, 'index'])->name('comment');
+Route::post('/commentstore', [CommentController::class, 'store'])->name('comment.store');
+Route::post('/commentreply/{comment}', [CommentReplyController::class, 'store'])->name('reply.store');
+// Route::post('/videoplayer/', [LessonController::class, 'status'])->name('videoplayer');
 // Route::get('/fetch_video', [App\Http\Controllers\LessonController::class, 'fetch'])->name('videoplayer');
 
 Route::get('/aboutus', function (){
@@ -60,8 +64,8 @@ Route::get('admin/studentlist', [UserController::class, 'list'])->name('admin.st
 Route::get('admin/documents/editdocument', [DocumentController::class, 'editdocument'])->name('admin.documents.editDocument')->middleware('is_admin');
 Route::get('admin/commentmanage', [CommentController::class, 'manage'])->name('admin.commentmanage')->middleware('is_admin');
 Route::get('admin/replymanage', [CommentReplyController::class, 'manage'])->name('admin.replymanage')->middleware('is_admin');
-Route::get('admin/comment', [App\Http\Controllers\CommentController::class, 'adminindex'])->name('admin.comment')->middleware('is_admin');
-Route::post('admin/commentstore', [App\Http\Controllers\CommentController::class, 'adminstore'])->name('admin.comment.store')->middleware('is_admin');
+Route::get('admin/comment', [CommentController::class, 'adminindex'])->name('admin.comment')->middleware('is_admin');
+Route::post('admin/commentstore', [CommentController::class, 'adminstore'])->name('admin.comment.store')->middleware('is_admin');
 
 // Route::get('file-upload', [LessonController::class, 'index'])->name('files.index')->middleware('is_admin');
 // Route::post('file-upload/upload-large-files', [LessonController::class, 'uploadLargeFiles'])->name('files.upload.large')->middleware('is_admin');

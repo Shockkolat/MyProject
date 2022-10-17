@@ -18,4 +18,9 @@ class Lesson extends Model
         'lesson_name',
         'file',
     ];
+
+    public function results()
+    {
+        return $this->hasMany(Results::class);
+    }
 }

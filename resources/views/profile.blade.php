@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--divinectorweb.com-->
-  <head>
+<!--divinectorweb.com-->
+
+<head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>StatLearning 📚</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap" rel="stylesheet" />
 
     <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
 
 
 </head>
+
 <body>
-  
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand">
@@ -53,7 +46,7 @@
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                     @endif
-                    
+
                     @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
@@ -62,7 +55,7 @@
                         <a class="nav-link" href="{{route('result')}}">{{ __('COURSE') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('comment')}}">{{ __('COMMENT') }}</a>
+                        <a class="nav-link" href="#">{{ __('BLOG') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('contact')}}">{{ __('CONTACT US') }}</a>
@@ -78,7 +71,7 @@
                             <a class="dropdown-item text-dark" href="{{route('profile')}}">
                                 {{ __('Profile') }}
                             </a>
-                            
+
                             <a class="dropdown-item text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -88,7 +81,7 @@
                                 @csrf
                             </form>
 
-                            
+
                         </div>
                     </li>
                     @endguest
@@ -97,30 +90,31 @@
         </div>
     </nav>
 
-  <div class="content mt-5">
-    <div class="thing mt-5 mb-3">
-      <h2>Profile</h2>
-      <p class="fs-3">
-        บัญชีผู้ใช้
-      </p>
+    <div class="content mt-5">
+        <div class="thing mt-5 mb-3">
+            <h2>Profile</h2>
+            <p class="fs-3">
+                บัญชีผู้ใช้
+            </p>
+        </div>
     </div>
-  </div>
-  <div>
-      <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png?w=360" class="rounded mx-auto d-block mt-5 mb-5" style="width: 250px">
-      </div>
+    <div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png?w=360" class="rounded mx-auto d-block mt-5 mb-5" style="width: 250px">
+        </div>
 
-      <div class="text-center"> 
-          <p class="fw-bolder fs-4 mb-3">ชื่อ-นามสกุล : <span class="fw-normal fs-4">ประหยัด     จันทร์อังคารพุทธ</span></p>
+        <div class="text-center">
+            <p class="fw-bolder fs-4 mb-3">Username : <span class="fw-normal fs-4">{{ Auth::user()->name }}</span></p>
 
-          <p class="fw-bolder fs-4 mb-3">Email : <span class="fw-normal fs-4">awasd@hotmail.com</span></p>
-          
-      </div>
-  </div>
-  <!-- -->
+            <p class="fw-bolder fs-4 mb-3">Email : <span class="fw-normal fs-4">{{ Auth::user()->email}}</span></p>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+    <!-- -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
