@@ -43,6 +43,7 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/videoplayer', [LessonController::class, 'fetch'])->name('videoplayer');
 Route::get('/videoplayer/{lesson}', [LessonController::class, 'fetch'])->name('videoplayer');
 Route::get('/videoplayer/{lesson}', [LessonController::class, 'select'])->name('videoselect');
+Route::post('/videoplayer/{lesson}', [LessonController::class, 'status'])->name('changestatus');
 
 Route::get('/comment', [CommentController::class, 'index'])->name('comment');
 Route::post('/commentstore', [CommentController::class, 'store'])->name('comment.store');

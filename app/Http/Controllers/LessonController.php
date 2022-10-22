@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class LessonController extends Controller
@@ -54,31 +55,54 @@ class LessonController extends Controller
         $lesson = 1;
         
         $select = Lesson::all();
-        
+        $status = DB::table('results')->where('status')->get();
         $data = DB::table('lessons')->where('id','=',$lesson)->get();
-   
-        return view('videoplayer', ['lessons'=>$data,'selects'=>$select]);
+        $status -> user_id = Auth::id();
+
+        return view('videoplayer')->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true),'statuss'=>json_decode($status,true)]));
+
+        
+        // return response()->json($data);
         // $data ['lessons'] = Lesson::orderBy('id', 'asc')->paginate(3);
         // return view('videoplayer', $data);
         
         //  $data = Lesson::find($lesson);
         //  return view('videoplayer', compact('lesson'));
    }
-    public function select( $lesson){
+    public function select($lesson){
             
         $request = $lesson;
         
         $select = Lesson::all();
+        $status = DB::table('results')->where('status')->get();
         
         $data = DB::table('lessons')->where('id','=',$request)->get();
-   
-        return view('videoplayer', ['lessons'=>$data,'selects'=>$select]);
+        $status -> user_id = Auth::id();
+        return view('videoplayer')->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true),'statuss'=>json_decode($status,true)]));
+        // return view('videoplayer', ['lessons'=>$data,'selects'=>$select,'status'=>$status]);
         // $data ['lessons'] = Lesson::orderBy('id', 'asc')->paginate(3);
         // return view('videoplayer', $data);
         
         //  $data = Lesson::find($lesson);
         //  return view('videoplayer', compact('lesson'));
     }
+
+    public function status(Request $request,$lesson){
+        
+        $status = new Result();
+        
+        $status->id = $lesson;
+        $status->user_id = Auth::id();
+        $status->status = $request->status;
+        $status->certificate = $request->certificate;
+        $status->exam = $request->exam;
+        // $status = DB::table('results')->where('status')->get();
+        // $data = DB::table('lessons')->where('id','=',$request)->get();
+        $status -> save();
+    //    return view('videoplayer', ['lessons'=>$data,'selects'=>$select,'statuss'=>$status]);
+        return view('changestatus');
+        // return view('videoplayer' )->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true),'statuss'=>json_decode($status,true)]));
+   }
    
 
     public function show(Lesson $lesson){
@@ -98,12 +122,6 @@ class LessonController extends Controller
         $lesson->delete();
         return redirect()->route('admin.lessons.editlesson')->with('success', 'Lesson has been deleted !');
     }
-
-    public function status(Result $result)
-{
-    $result ['results'] = Result::all();
-    return view('videoplayer', $result);
-}
 
 
 }

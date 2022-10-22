@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>StatLearning 📚</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
@@ -98,22 +98,25 @@
   </nav>
 
   <div class="container d-flex justify-content-between">
+    @csrf
       <div class="video">
         @foreach($lessons as $lesson)
-          <video 
-          width="720" 
-          height="480" 
-          {{-- src ="/video/{{ $lesson->file }}"  --}}
-          title="video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;currentTime" 
-          allowfullscreen
-          id="video"
-          controls
-          >
-          <source src ="/video/{{ $lesson->file }}" type="video/mp4">
-          </video>
-        @endforeach
+          
+            <video 
+            width="720" 
+            height="480" 
+            {{-- src ="/video/{{ $lesson->file }}"  --}}
+            title="video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
+            allowfullscreen
+            id="video"
+            controls
+            onended= "check({{ $lesson['id'] }})">
+            <source src ="/video/{{ $lesson['file'] }}" type="video/mp4">
+            </video>
+          @endforeach
+        
       </div>
       
 
@@ -121,16 +124,11 @@
       <h2 class="mt-5 mb-3 fw-bolder  text-center">หลักสถิติ 1</h2>
       <div class="list-group">
         @foreach($selects as $select)
-        <a href="{{ route('videoselect',$select) }}" class="list-group-item list-group-item-action">
-          {{ $select->lesson_name}}
+        <a href="{{ route('videoselect',$select['id']) }}" class="list-group-item list-group-item-action">
+          {{ $select['lesson_name']}}
         </a>
         @endforeach
-        {{-- <a href="#" class="list-group-item list-group-item-action">
-          บทที่ 2 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          บทที่ 3 การแจกแจงค่าของสถิติ
-        </a> --}}
+        
         <a href="#"class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
           post test
         </a>
@@ -141,23 +139,81 @@
             รับใบรับรอง
           </button>
         </div>
+
+        
+       {{-- <p> 1 {{$status->status}}</p>  --}}
+       
     </div>
   </div>
 
-  <script src="./js/script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  {{-- <script src="./js/script.js"></script> --}}
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
 
   <script type="text/javascript">
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     var video = document.getElementById('video').src;
     
-    var is_ended = 0;
+    // var status = $('#statuss').val() ;
 
-    video.onended = function() {
-      is_ended = 1;
-    };
+    
+
+    console.log(video);
+
+    function check(id){
+      
+      console.log(id);
+      let url = "{{ route('changestatus', ':id') }}";
+      url = url.replace(':id', id);
+
+      $.ajax({
+           type:'POST',
+           url:url,
+           context: document.body,
+           data:{
+            id:id
+           },
+           success:function(data){
+              alert(data.success);
+           }
+        });
+
+      // document.location.href=url;
+    }
+      
+      // var id = $("$lesson["req"]").val();
+
+      // var url = "{{ route('changestatus',':req') }}"
+
+      // $.ajax({
+      //       url: "{{ route('changestatus',"req") }}",
+      //       headers: {
+      //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      //     },
+      //       type:"POST",
+      //       dataType: 'json',
+      //       data:{
+      //         query:{_token:'{{ csrf_token() }}'} ,// CSRF token
+      //       },
+      //       processData: false,
+      //       success:function(response){
+      //         console.log(response);
+      //         if(response) {
+      //           window.location.href = "{{ route('changestatus',"req") }}";
+      //         }
+      //       },
+      //       error: function(error) {
+      //        console.log(error);
+      //       }
+      //      });
+    // };
   </script>
 
 </body>
