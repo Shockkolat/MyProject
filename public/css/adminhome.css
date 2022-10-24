@@ -33,3 +33,125 @@
     margin-top: 15rem;
     margin-left: 18rem;
 }
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar-nav a {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+
+}
+
+.navbar-dark .navbar-brand {
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+.navbar-dark .navbar-brand span {
+    color: #1977cc;
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar-nav {
+        text-align: center
+    }
+
+    .carousel-caption {
+        bottom: 165px
+    }
+
+    .carousel-caption h5 {
+        font-size: 16px
+    }
+
+    .carousel-caption a {
+        padding: 10px 15px;
+        font-size: 14px
+    }
+
+    .navbar .appbtn {
+        display: none;
+    }
+
+
+}
+#wrapper {
+display: flex
+}
+
+#wrapper #content-wrapper {
+background-color: #f8f9fc;
+width: 100%;
+overflow-x: hidden
+}
+
+#wrapper #content-wrapper #content {
+flex: 1 0 auto
+}
+
+.taaa{
+margin-top: 6rem;
+margin-left: 16rem;
+
+}
+
+.flex-column {
+flex-direction: column !important
+}
+
+.flex-row-reverse {
+flex-direction: row-reverse !important
+}
+
+.flex-column-reverse {
+flex-direction: column-reverse !important
+}
+.sidebar .nav-link {
+color: white;
+}
+
+.sidebar .nav-link:hover {
+background-color: gray;
+}
+
+.badge-info {
+color: #fff;
+background-color: #36b9cc
+}
+
+a.badge-info:focus,
+a.badge-info:hover {
+color: #fff;
+background-color: #2a96a5
+}
+
+a.badge-info.focus,
+a.badge-info:focus {
+outline: 0;
+box-shadow: 0 0 0 .2rem rgba(54, 185, 204, .5)
+}
+
+.badge-info {
+color: #fff;
+background-color: #36b9cc
+}
+
+a.badge-info:focus,
+a.badge-info:hover {
+color: #fff;
+background-color: #2a96a5
+}
+
+a.badge-info.focus,
+a.badge-info:focus {
+outline: 0;
+box-shadow: 0 0 0 .2rem rgba(54, 185, 204, .5)
+}

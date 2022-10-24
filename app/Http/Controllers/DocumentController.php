@@ -7,6 +7,7 @@ use App\Models\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File; 
 use PhpParser\Node\Expr\FuncCall;
+use Response;
 
 
 class DocumentController extends Controller
@@ -64,5 +65,14 @@ class DocumentController extends Controller
 
         $document->delete();
         return redirect()->route('admin.documents.editDocument')->with('success', 'Document has been deleted !');
+    }
+
+    public function getDownload(){
+        
+    // $file_name = Document::where('document_name','=',.302064512)->get();
+
+    $file_path = public_path('doc/302064512.pdf');
+
+    return Response::download($file_path);
     }
 }

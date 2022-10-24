@@ -9,13 +9,22 @@ class Result extends Model
 {
     use HasFactory;
 
-    public function lessons()
-    {
-        return $this->belongsTo(Lesson::class);
-    }
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+    public function questions()
+    {
+        return $this->belongsToMany(Question::class)->withPivot(['option_id', 'points']);
+    }
+
+    public function lessons()
+    {
+        return $this->belongsTo(Lesson::class);
+    }
+
+
 }

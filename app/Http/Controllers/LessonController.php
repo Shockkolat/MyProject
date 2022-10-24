@@ -18,7 +18,16 @@ use Illuminate\Support\Facades\Auth;
 class LessonController extends Controller
 {
 
-    
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 
 
     // Create Index
@@ -55,11 +64,11 @@ class LessonController extends Controller
         $lesson = 1;
         
         $select = Lesson::all();
-        $status = DB::table('results')->where('status')->get();
+        // $status = DB::table('results')->where('status')->get();
         $data = DB::table('lessons')->where('id','=',$lesson)->get();
-        $status -> user_id = Auth::id();
+        // $status -> user_id = Auth::id();
 
-        return view('videoplayer')->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true),'statuss'=>json_decode($status,true)]));
+        return view('videoplayer')->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true)]));
 
         
         // return response()->json($data);
@@ -74,11 +83,11 @@ class LessonController extends Controller
         $request = $lesson;
         
         $select = Lesson::all();
-        $status = DB::table('results')->where('status')->get();
+        // $status = DB::table('results')->where('status')->get();
         
         $data = DB::table('lessons')->where('id','=',$request)->get();
-        $status -> user_id = Auth::id();
-        return view('videoplayer')->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true),'statuss'=>json_decode($status,true)]));
+        // $status -> user_id = Auth::id();
+        return view('videoplayer')->with((['lessons'=>json_decode($data,true),'selects'=>json_decode($select,true)]));
         // return view('videoplayer', ['lessons'=>$data,'selects'=>$select,'status'=>$status]);
         // $data ['lessons'] = Lesson::orderBy('id', 'asc')->paginate(3);
         // return view('videoplayer', $data);

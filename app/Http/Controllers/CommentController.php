@@ -11,17 +11,17 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {   
     public function index() {
-        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(5);
+        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(10);
         return view('comment', $data);
     }
 
     public function manage() {
-        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(5);
+        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(10);
         return view('commentmanage', $data);
     }
 
     public function adminindex() {
-        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(5);
+        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(10);
         return view('adminComment', $data);
     }
     

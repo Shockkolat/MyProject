@@ -129,7 +129,7 @@
         </a>
         @endforeach
         
-        <a href="#"class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
+        <a href="{{route('client.test')}}"class="list-group-item list-group-item-action " tabindex="-1" aria-disabled="true">
           post test
         </a>
       </div>
@@ -152,7 +152,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
 
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
 
     $.ajaxSetup({
         headers: {
@@ -214,6 +214,6 @@
       //       }
       //      });
     // };
-  </script>
+  </script> --}}
 
 </body>
