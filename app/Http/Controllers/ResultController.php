@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Admin\ResultRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ResultController extends Controller
 {

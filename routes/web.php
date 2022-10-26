@@ -13,6 +13,8 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ClientResultController;
+use App\Http\Controllers\CertificateController;
+use setasign\Fpdi\Fpdi;
 use App\Models\Exam;
 use App\Models\Lesson;
 
@@ -38,7 +40,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
 
+Route::middleware(['auth'])->group(function () {
 
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -49,7 +53,8 @@ Route::get('/videoplayer', [LessonController::class, 'fetch'])->name('videoplaye
 Route::get('/videoplayer/{lesson}', [LessonController::class, 'fetch'])->name('videoplayer');
 Route::get('/videoplayer/{lesson}', [LessonController::class, 'select'])->name('videoselect');
 Route::post('/videoplayer/{lesson}', [LessonController::class, 'status'])->name('changestatus');
-Route::get('/result/download', [DocumentController::class, 'getDownload'])->name('download');
+Route::get('/result/download_doc', [DocumentController::class, 'getDownload'])->name('download');
+Route::get('/result/certificate', [CertificateController::class, 'fillPDF'])->name('certificate');
 
 Route::get('/comment', [CommentController::class, 'index'])->name('comment');
 Route::post('/commentstore', [CommentController::class, 'store'])->name('comment.store');
@@ -60,7 +65,7 @@ Route::post('/commentreply/{comment}', [CommentReplyController::class, 'store'])
 Route::get('/test',[TestController::class, 'index'])->name('client.test');
 Route::post('/test',[TestController::class, 'store'])->name('client.test.store');
 Route::get('/results/{result_id}', [ClientResultController::class, 'show'])->name('client.results.show');
-
+});
 
 Route::get('/aboutus', function (){
     return view('aboutus');
@@ -128,4 +133,3 @@ Route::post('admin/commentstore', [CommentController::class, 'adminstore'])->nam
 // Route::get('file-upload', [LessonController::class, 'index'])->name('files.index')->middleware('is_admin');
 // Route::post('file-upload/upload-large-files', [LessonController::class, 'uploadLargeFiles'])->name('files.upload.large')->middleware('is_admin');
 
-Auth::routes();
