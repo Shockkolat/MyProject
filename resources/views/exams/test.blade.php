@@ -1,17 +1,27 @@
 @extends('layouts.client')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Test</div>
+<style>
+    .padd{
+        margin-top: 2rem
+    }
+</style>
 
-                <div class="card-body">
+<div class="padd container">
+    <div class="row justify-content-center ">
+        <div class="col-md-8 ">
+            <div class="padd  ">
+                <div class="content mt-5">
+                    <div class="thing mt-5 mb-3 text-center">
+                      <h2 class="fw-bold">Examination</h2>
+                    </div>
+                  </div>
+
+                <div class="card-body ">
                     @if(session('status'))
                         <div class="row">
                             <div class="col-12">
-                                <div class="alert alert-success" role="alert">
+                                <div class="alert alert-success " role="alert">
                                     {{ session('status') }}
                                 </div>
                             </div>
@@ -53,11 +63,11 @@
                         @endforeach
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="d-grid gap-2 col-4 mx-auto">
+                                <button type="submit" class="btn btn-primary" >
                                     Submit
                                 </button>
-                            </div>
+                              </div>
                         </div>
                     </form>
                 </div>
@@ -65,4 +75,12 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 @endsection

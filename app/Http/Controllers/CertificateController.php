@@ -32,21 +32,25 @@ class CertificateController extends Controller
 
     public function fillPDF()
     {   
-        $i  = Result::select('total_points')->where('user_id', Auth::user()->id)->first() ;
+        $i  = Result::select('total_points')->where('user_id', Auth::user()->id)->latest('id')->first() ;
         $i;
-        if ($i->total_points >5){
+        
+        if($i === NULL){
+            return redirect()->back()->with('alert' , 'คุณยังไม่ได้สอบ กรุณาไปทำการสอบก่อนนะ !');
+            }
+        else if ($i->total_points < 7){
+            return redirect()->back()->with('alert' , 'คะแนนคุณยังไม่ผ่านเกณฑ์ กลับสอบใหม่นะ !');
             
+        }
+        else{
             $fpdf = new Fpdf ('L','mm','A4');
             $fpdf -> AddPage();
-            $fpdf->SetFont('Courier','',16);
+            $fpdf->SetFont('Courier','',26);
             $fpdf->SetTextColor(0, 0, 0);
             $fpdf->Image(public_path('images\certificate.jpg'),0,0,300,220);
             $name = Auth::user()->name;
             $fpdf->Cell(0, 160, $name, 0, 0, 'C');
             $fpdf->Output();
         }
-        else{
-                return redirect()->back()->with('alert' , 'คะแนนมึงยังไม่ผ่าน ไปสอบใหม่ซะไอ้โง่ !');
-            }
     }
 }

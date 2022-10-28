@@ -24,7 +24,7 @@
 <body>
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
+      <div class="container">
             <a class="navbar-brand">
                 <span>Stat</span>Learning
             </a>
@@ -93,26 +93,26 @@
                     @endguest
                 </ul>
             </div>
-        </div>
+          </div>
     </nav>
 
 
-  <div class="content mt-5">
-    <div class="thing mt-5 mb-3">
+  <div class="content mt-3">
+    <div class="thing mt-5 mb-2">
       <h2>Contact</h2>
       <p>
         ติดต่อเรา
       </p>
     </div>
   </div>
-  <div class="d-flex justify-content-center">
-        <div id="map-container-google-1" class="map-container mt-4 ms-2 pe-5 " style="height: 500px">
+  <div class="mb-5 d-flex justify-content-center">
+        <div id="map-container-google-1" class="map-container mb-5 ms-2 pe-5 " style="height: 500px">
           <iframe class="border border-3"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3870.959494250312!2d99.9918315!3d14.0204154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2f1342d04d6e1%3A0x6111c6e4245323b9!2z4LmB4Lih4LmA4LiZ4Lit4Lij4LmMIOC4iuC4oeC4oOC4ueC4nuC4h-C4qOC5jA!5e0!3m2!1sen!2sth!4v1663143051920!5m2!1sen!2sth"  
             style="border:0;" 
             allowfullscreen="" 
-            width="900"
-            height="650"
+            width="800"
+            height="550"
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
@@ -127,7 +127,7 @@
             Email : daewtoy@gmail.com <br />
           </p>
 
-          <h2 class="fw-bolder fs-5 mb-3">มีคำถามหรือคำแนะนำสามารถบอกเราได้ด้านล่าง</h2>
+          {{-- <h2 class="fw-bolder fs-5 mb-3">มีคำถามหรือคำแนะนำสามารถบอกเราได้ด้านล่าง</h2>
           <form>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Email address :</label>
@@ -150,19 +150,19 @@
                 Send
               </button>
             </div>
-          </form>
+          </form> --}}
                   
       </div>
               
   </div>
+
   
-  <!-- 
-    <footer class="bg-dark text-center text-lg-start fixed-bottom">
+    {{-- <footer class="bg-dark text-center text-lg-start fixed-bottom">
         <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2)">
             @Parada Sarawong 6221601223 Narawit Choeychom 6221608058
         </div>
-    </footer>
-    -->
+    </footer> --}}
+    
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>

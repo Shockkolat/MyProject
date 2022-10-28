@@ -6,6 +6,7 @@
     .padd{
         margin-top: 6rem
     }
+
 </style>
 
 
@@ -21,6 +22,17 @@
 
                 <div>
                     <p class="mt-5">Total points: {{ $result->total_points }} points</p>
+                    @if($result->total_points  < 7)
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <strong>คุณสอบไม่ผ่าน กรุณาทบทวนเนื้อหาและกลับมาสอบใหม่นะ !</strong> {{ session('error') }}
+
+                        </div>
+                    @else
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <strong>คุณสอบผ่านแล้ว รับใบรับรองได้เลย!</strong> {{ session('success') }}
+
+                        </div>
+                    @endif
                     <table class="table table-bordered">
                         <thead>
                             <tr>

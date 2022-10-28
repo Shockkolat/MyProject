@@ -11,8 +11,11 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {   
     public function index() {
-        $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(10);
-        return view('comment', $data);
+        $data ['comments']= Comment::orderBy('id', 'asc')->paginate(10);
+
+        $sum ['id'] = Comment::select('id')->get()->count();
+
+        return view('comment',$data)->with($sum);
     }
 
     public function manage() {
