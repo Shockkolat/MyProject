@@ -151,8 +151,8 @@
         </p>
       </div>
     </main>
-    <div class="d-flex flex-column bd-highlight mb-3">
-      <div class="progress blue mt-5">
+    <div class="d-flex flex-column bd-highlight mt-5">
+      {{-- <div class="progress blue mt-5">
         <span class="progress-left">
           <span class="progress-bar"></span>
         </span>
@@ -160,9 +160,9 @@
           <span class="progress-bar"></span>
         </span>
         <div class="progress-value fw-bolder">90%</div>
-      </div>
-      <h2 class="fw-bolder fs-5 text-center mb-4">ความคืบหน้า</h2>
-        <a class="btn btn-warning"  href="{{route('download')}} " target="_blank">
+      </div> --}}
+      {{-- <h2 class="fw-bolder fs-5 text-center mt-4">ความคืบหน้า</h2> --}}
+        <a class="btn btn-warning mt-5"  href="{{route('download')}} " target="_blank">
           ดาวน์โหลดเอกสาร
         </a>
     </div>

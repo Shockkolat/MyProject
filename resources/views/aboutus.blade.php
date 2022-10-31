@@ -50,6 +50,7 @@
         </div>
       </div>
     </nav>
+    
     <div class="content">
       <div class="thing">
         <h2>StatLearning</h2>
@@ -58,14 +59,15 @@
         </p>
       </div>
     </div>
+
     <div class="team-area">
       <div class="container">
-        <div class="row justify-content-around">
+        <div class="row justify-content-around ">
           <div class="col-md-3 col-xs-12">
             <div class="single-team">
               <div class="img-area">
                 <img
-                  src="https://scontent.fkdt1-1.fna.fbcdn.net/v/t1.6435-9/112215397_3248173875250435_6025172610890925479_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=Kz3Jpkw3tiYAX-Z2m8f&_nc_ht=scontent.fkdt1-1.fna&oh=00_AT-o53huzCTKQ6ZNL837XxFOYdDDnd6iEkNJD6tvXPOLbA&oe=63368428"
+                  src="https://scontent.fkdt1-1.fna.fbcdn.net/v/t1.15752-9/295489617_1236036413843995_8954143911803995668_n.png?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeET4O9QMHSDxzg9wPoUsmMF_n5CaruANlj-fkJqu4A2WEvPlCFil7RVZYOUSlMt47FTVpcMhgXrUkLb5reK2z3O&_nc_ohc=sdI5pZ1EZRIAX98cm6B&tn=dEFua9pEEBlUGRAE&_nc_ht=scontent.fkdt1-1.fna&oh=03_AdT3wuNwFHb41RRa0irp0g1csFswf219srjFLM7tMxv5kA&oe=637A281C"
                   class="img-responsive"
                 />
               </div>
@@ -75,11 +77,11 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-xs-12">
+          <div class="col-md-3 col-xs-12 ">
             <div class="single-team">
               <div class="img-area">
                 <img
-                  src="https://scontent.fkdt1-1.fna.fbcdn.net/v/t39.30808-6/299227022_2969341786703286_8346152022769037610_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH1v3aSxGox78kg9Z8x_u-wj4f28S1EzCiPh_bxLUTMKBcu73BEfrgp4W56cUj2mEt2_eOO6MgBNxE-xPZ1IsPV&_nc_ohc=xoc_TeTQ67AAX-PkF5M&_nc_ht=scontent.fkdt1-1.fna&oh=00_AT9eBtW_aqcuQHpHD0EDlz2MAig-QDVS0Y5V7aZdR_folQ&oe=631C2F85"
+                  src="https://scontent.fkdt1-1.fna.fbcdn.net/v/t1.15752-9/309369381_1396354264226583_536630781834950344_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHc9PkSkvzya1646ROG5HUASLtBLGE7OzhIu0EsYTs7OO0sATxVc0C1XjAc-Ow199yCrWohQdWSPivfEARW1DSb&_nc_ohc=4ZlE3l4Gh3YAX8FoJcL&_nc_ht=scontent.fkdt1-1.fna&oh=03_AdRZ38zLI7ndSJxO_xHagMzhlD_jFFFpFjtdXLvLogUFaw&oe=63777C64"
                   class="img-responsive"
                 />
               </div>
@@ -93,38 +95,38 @@
       </div>
     </div>
     <!-- -->
-    <footer class="bg-light text-center text-lg-start">
+    <footer class="text-center text-lg-start fixed-bottom">
       <!-- Grid container -->
       <div class="container p-4">
-        <!--Grid row-->
+        {{-- <!--Grid row-->
         <div class="row">
           <!--Grid column-->
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Footer text</h5>
+            <h5 class="text-uppercase">ที่มาและความสำคัญ</h5>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              atque ea quis molestias. Fugiat pariatur maxime quis culpa
-              corporis vitae repudiandae aliquam voluptatem veniam, est atque
-              cumque eum delectus sint!
+              ปัจจุบันนี้โลกของเราได้พัฒนาในหลายๆด้าน โดยเฉพาะด้านเทคโนโลยี 
+              ซึ่งมีความสำคัญในการดำเนินชีวิตของคนในยุคปัจจุบันเป็นอย่างมาก 
+              จนเปรียบเสมือนปัจจัยๆหนึ่งในการดำเนินชีวิต ซึ่งทั้งหมดนั้นก็มักจะใช้แอปพลิเคชัน 
+              เว็บไซต์และอินเทอร์เน็ตเพราะสามารถใช้งานได้ง่าย ดังนั้นผู้จัดทำจึงมีความคิดที่จะใช้ Web Application 
+              มาสร้างระบบการจัดการเรียนการสอนแบบ E-Learning ในวิชา หลักสถิติ 1
             </p>
           </div>
           <!--Grid column-->
 
           <!--Grid column-->
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Footer text</h5>
+            <h5 class="text-uppercase ms-5">วัตถุประสงค์</h5>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              atque ea quis molestias. Fugiat pariatur maxime quis culpa
-              corporis vitae repudiandae aliquam voluptatem veniam, est atque
-              cumque eum delectus sint!
+            <p class="ms-5">
+              1. เพื่อช่วยในการจัดการเรียนการสอนแบบออนไลน์ผ่านเว็บไซต์ <br/>
+              2. เพื่อสร้างความสะดวกสบายในการเรียนตามสถานการณ์โควิด<br/>
+              3. เพื่อเป็นส่วนช่วยในการเสริมความรู้และได้ทำแบบทดสอบเพื่อวัดผลทางการเรียน
             </p>
           </div>
           <!--Grid column-->
         </div>
-        <!--Grid row-->
+        <!--Grid row--> --}}
       </div>
       <!-- Grid container -->
 
