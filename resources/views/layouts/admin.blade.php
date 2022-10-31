@@ -12,7 +12,7 @@
      <!-- CSRF Token -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Edit Exam</title>
+    <title>Stat Learning Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -271,6 +271,9 @@ color: white;
     <!-- <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script> -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
