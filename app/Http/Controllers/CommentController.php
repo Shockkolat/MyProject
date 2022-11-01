@@ -25,7 +25,10 @@ class CommentController extends Controller
 
     public function adminindex() {
         $data ['comments'] = Comment::orderBy('id', 'asc')->paginate(10);
-        return view('adminComment', $data);
+        
+        $sum ['id'] = Comment::select('id')->get()->count();
+
+        return view('adminComment',$data)->with($sum);
     }
     
 

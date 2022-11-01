@@ -32,7 +32,7 @@
       <section class="comment-sec-area">
         <div class="container">
           <div class="row flex-column">
-            <h5 class="text-uppercase mt-3 mb-3">05 Comments</h5>
+            <h5 class="text-uppercase mt-3 mb-3">{{$id}} Comments</h5>
             <br />
             @foreach($comments as $comment)
             <!-- Frist Comment -->

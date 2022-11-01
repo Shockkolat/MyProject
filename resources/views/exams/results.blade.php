@@ -24,7 +24,7 @@
                     <p class="mt-5">Total points: {{ $result->total_points }} points</p>
                     @if($result->total_points  < 7)
                         <div class="alert alert-danger alert-dismissible" role="alert">
-                            <strong>คุณสอบไม่ผ่าน กรุณาทบทวนเนื้อหาและกลับมาสอบใหม่นะ !</strong> {{ session('error') }}
+                            <strong>คุณสอบไม่ผ่าน กรุณาทบทวนเนื้อหาและกลับมาสอบใหม่ !</strong> {{ session('error') }}
 
                         </div>
                     @else
