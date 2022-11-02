@@ -38,7 +38,7 @@
                             @endforeach
                         </select>
                     </div> --}}
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save')}}</button>
+                    <button type="submit" class="btn btn-primary btn-block mt-3">{{ __('Save')}}</button>
                 </form>
             </div>
         </div>

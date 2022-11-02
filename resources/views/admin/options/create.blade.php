@@ -43,7 +43,7 @@
                         <label for="points">{{ __('points') }}</label>
                         <input type="number" class="form-control" id="points" placeholder="{{ __('option text') }}" name="points" value="{{ old('points') }}" />
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block mt-3">{{ __('Save') }}</button>
                 </form>
             </div>
         </div>

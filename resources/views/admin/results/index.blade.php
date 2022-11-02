@@ -7,18 +7,18 @@
    
 
     <!-- Content Row -->
-        <div class="card">
+        <div class="card mb-5">
             <div class="card-header py-3 d-flex">
 
                 <div class="fw-bold text-center ">
-                    <h2>{{ __('result') }}</h2>
+                    <h2>{{ __('Result') }}</h2>
                 </div>
                 <div class="ms-auto">
-                    <a href="{{ route('admin.results.create') }}" class="btn btn-primary">
+                    {{-- <a href="{{ route('admin.results.create') }}" class="btn btn-primary">
                         <span class="icon text-white-50">
                             <i class="fa fa-plus"></i>
                         </span>
-                        <span class="text">{{ __('New result') }}</span>
+                        <span class="text">{{ __('New result') }}</span> --}}
                     </a>
                 </div>
             </div>
@@ -115,7 +115,7 @@
   dtButtons.push(deleteButton)
   $.extend(true, $.fn.dataTable.defaults, {
     order: [[ 1, 'asc' ]],
-    pageLength: 50,
+    pageLength: 10,
   });
   $('.datatable-result:not(.ajaxTable)').DataTable({ buttons: dtButtons })
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){

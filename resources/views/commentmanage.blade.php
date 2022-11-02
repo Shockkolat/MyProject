@@ -20,10 +20,10 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-lg-12 text-center mt-5">
-                <h2 class="mt-3">Comment & Reply management</h2>
+                <h2 class="mt-2">Comment & Reply management</h2>
             </div>
             {{-- Comment Zone --}}
                 <table class="table table-bordered mt-3">

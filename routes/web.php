@@ -129,6 +129,8 @@ Route::get('admin/commentmanage', [CommentController::class, 'manage'])->name('a
 Route::get('admin/replymanage', [CommentReplyController::class, 'manage'])->name('admin.replymanage')->middleware('is_admin');
 Route::get('admin/comment', [CommentController::class, 'adminindex'])->name('admin.comment')->middleware('is_admin');
 Route::post('admin/commentstore', [CommentController::class, 'adminstore'])->name('admin.comment.store')->middleware('is_admin');
+Route::get('admin/studentlist/editusername/{id}', [UserController::class, 'edit'])->name('admin.editusername')->middleware('is_admin');
+Route::post('admin/studentlist/editusername/{id}', [UserController::class, 'update'])->name('admin.editusername.update')->middleware('is_admin');
 
 // Route::get('file-upload', [LessonController::class, 'index'])->name('files.index')->middleware('is_admin');
 // Route::post('file-upload/upload-large-files', [LessonController::class, 'uploadLargeFiles'])->name('files.upload.large')->middleware('is_admin');

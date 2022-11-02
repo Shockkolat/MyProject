@@ -31,7 +31,7 @@
               <th>Name</th>
               <th>Email</th>
               <th>Permission</th>
-              {{-- <th width="280px">Action</th> --}}
+              <th width="280px">Action</th>
           </tr>
           @foreach($users as $user)
             <tr>
@@ -39,7 +39,8 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->is_admin }}</td>
-                
+                <td>
+                  <a href="{{ route('admin.editusername', $user->id) }}" class="btn btn-warning">Edit Username</a>
                     {{-- <form action="{{ route('lessons.destroy', $lesson->id) }}" method="POST">
                         <a href="{{ route('lessons.show', $lesson->id) }}" class="btn btn-primary">View</a>
                         @csrf

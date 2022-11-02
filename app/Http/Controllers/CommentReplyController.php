@@ -12,7 +12,7 @@ class CommentReplyController extends Controller
 {    
 
     public function manage() {
-        $data ['replies'] = CommentReply::orderBy('id', 'asc')->paginate(5);
+        $data ['replies'] = CommentReply::orderBy('id', 'asc')->paginate(10);
         return view('replymanage', $data);
     }
 

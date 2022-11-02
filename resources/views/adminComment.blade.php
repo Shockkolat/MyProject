@@ -36,7 +36,7 @@
             <br />
             @foreach($comments as $comment)
             <!-- Frist Comment -->
-            <div class="comment">
+            <div class="card comment mt-2 pt-3">
               <div class="comment-list">
                 <div
                   class="single-comment justify-content-between d-flex"
@@ -83,7 +83,7 @@
                     <div class="desc">
                       <h5><a href="#" class="link-primary">{{Auth::user()->name}}</a></h5>
                       <p class="date fw-bold">{{$comment->created_at}}</p>
-                      <div class="row flex-row d-flex">
+                      <div class="row flex-row d-flex ">
                       <form action="{{route('reply.store',$comment)}}" method="POST">
                         <div class="col-lg-12">
                           @csrf

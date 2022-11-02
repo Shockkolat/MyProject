@@ -8,9 +8,8 @@
 @section('content')
 {{-- <link href="{{ asset('/css/adminhome.css') }}" rel="stylesheet"> --}}
 
-<div class="container-fluid">
-    <div class="row">
-        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collpase ">
+
+        <nav id="sidebar" class="col-md-2 col-lg-2 d-md-block sidebar collpase">
             <div class="position-sticky">
                 <ul class="nav flex-column ms-1">
                     <li class="nav-item">
@@ -60,8 +59,7 @@
         </nav>
 
 
-    </div>
-</div>
+
 
 <div class="container">
     <div class="row justify-content-center">

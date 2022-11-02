@@ -7,11 +7,11 @@
    
 
     <!-- Content Row -->
-        <div class="card">
+        <div class="card mb-5">
             <div class="card-header py-3 d-flex">
 
                 <div class="fw-bold text-center ">
-                    <h2>{{ __('question') }}</h2>
+                    <h2>{{ __('Question') }}</h2>
                   </div>
                 
                 <div class="ms-auto">
@@ -106,7 +106,7 @@
   dtButtons.push(deleteButton)
   $.extend(true, $.fn.dataTable.defaults, {
     order: [[ 1, 'asc' ]],
-    pageLength: 50,
+    pageLength: 10,
   });
   $('.datatable-question:not(.ajaxTable)').DataTable({ buttons: dtButtons })
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){

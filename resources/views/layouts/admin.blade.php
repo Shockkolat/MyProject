@@ -232,14 +232,14 @@ color: white;
           columns: ':visible'
         }
       },
-      {
-        extend: 'csv',
-        className: 'btn-outline-secondary mx-2',
-        text: csvButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
+      // {
+      //   extend: 'csv',
+      //   className: 'btn-outline-secondary mx-2',
+      //   text: csvButtonTrans,
+      //   exportOptions: {
+      //     columns: ':visible'
+      //   }
+      // },
       {
         extend: 'excel',
         className: 'btn-outline-secondary mx-2',
@@ -248,14 +248,14 @@ color: white;
           columns: ':visible'
         }
       },
-      {
-        extend: 'pdf',
-        className: 'btn-outline-secondary mx-2',
-        text: pdfButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
+      // {
+      //   extend: 'pdf',
+      //   className: 'btn-outline-secondary mx-2',
+      //   text: pdfButtonTrans,
+      //   exportOptions: {
+      //     columns: ':visible'
+      //   }
+      // },
       {
         extend: 'print',
         className: 'btn-outline-secondary mx-2',

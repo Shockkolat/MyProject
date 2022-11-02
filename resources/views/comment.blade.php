@@ -103,7 +103,9 @@
             <br />
             @foreach($comments as $comment)
             <!-- Frist Comment -->
-            <div class="comment">
+
+            <div class="card comment mt-2 pt-3">
+
               <div class="comment-list">
                 <div
                   class="single-comment justify-content-between d-flex"
@@ -124,6 +126,7 @@
                   </div>
                 </div>
               </div>
+
                @if($comment->replies->count() > 0)
                 @foreach($comment->replies as $reply)
                   <div class="comment-list left-padding">
@@ -183,7 +186,7 @@
       <!-- End comment-sec Area -->
 
       <!-- Start commentform Area -->
-      <section class="commentform-area pb-120 pt-30 mb-50">
+      <section class="commentform-area pb-120 pt-30 mb-50 mt-5">
         <div class="container">
           <h5 class="text-uppercase mb-2">Leave a Comment</h5>
           <div class="row flex-row d-flex">
